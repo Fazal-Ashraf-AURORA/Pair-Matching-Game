@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameSettings : MonoBehaviour
@@ -11,8 +9,8 @@ public class GameSettings : MonoBehaviour
     {
         NotSet = 0,
         E10Pairs = 10, 
-        E11Pairs = 15,
-        E12Pairs = 20,
+        E15Pairs = 15,
+        E20Pairs = 20,
     }
 
     public enum EPuzzlecategories
@@ -83,5 +81,10 @@ public class GameSettings : MonoBehaviour
         _settings = 0;
         _gameSettings.PairsNumber = EPairNumber.NotSet;
         _gameSettings.PuzzleCategory = EPuzzlecategories.NotSet;
+    }
+
+    public bool AllSettingsReady()
+    {
+        return _settings == SettingsNumber;
     }
 }

@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+ using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SetGameButton : MonoBehaviour
 {
@@ -32,6 +31,11 @@ public class SetGameButton : MonoBehaviour
             case EButtonType.PuzzleCategoryBtn:
                 GameSettings.Instance.SetPuzzleCategory(Component.PuzzleCategories);
                 break;
+        }
+
+        if(GameSettings.Instance.AllSettingsReady())
+        {
+            SceneManager.LoadScene(GameSceneName);
         }
     }
 }
